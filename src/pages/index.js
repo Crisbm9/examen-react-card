@@ -1,36 +1,62 @@
 import * as React from "react"
-import { Link } from "gatsby"
-// import { StaticImage } from "gatsby-plugin-image"
+import Card from "../components/card"
+import { getImage } from 'gatsby-plugin-image';
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+
+import { graphql } from "gatsby"
 
 
 
-
-const IndexPage = () => (
+const IndexPage = ({data}) => (
   <Layout>
-      {/* <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      /> */}
-    <div>
-      <nav>
-    <ul>
-      <li><Link to="/">Inicio</Link></li>
-      <li><Link to="/contacto">Contacto</Link></li>
-    </ul>
-   </nav>
   <h1>Inicio</h1>
-</div>
+ 
+  
+  <div className="card-container">
+      {data.allTecnologiasJson.edges.map(({ node }) => {
+        const image = getImage(node.image);
+        return (
+          
+            <Card 
+            descripcion={node.description} 
+            imagen={image} 
+            piefoto={node.title} 
+            titulo={node.title}
+            ></Card>
+          
+        );
+      })}
+    </div>
+
   </Layout>
 )
 
-export const Head = () => <Seo title="Home" />
+export const query = graphql`
+ query {
+  allTecnologiasJson {
+    edges {
+      node {
+        id
+        link
+        title
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: DOMINANT_COLOR
+              formats: WEBP
+              width: 300
+              aspectRatio: 1.77
+            )
+          }
+        }
+        description
+      }
+    }
+  }
+}
+`;
+
+
 
 export default IndexPage
