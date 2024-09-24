@@ -15,9 +15,8 @@
   justify-content: center;
 }
 
-link:hover{
-  
-  background-color: #005fa3;
+.link:hover{
+background-color: #005fa3;
 }
 .button{
   text-align: center;
