@@ -1,6 +1,6 @@
 .card{
   background-color: #e5f6ff;
-  border: 2px solid black ;
+  border: 2px solid #dddddd ;
   max-width: 300px;
   padding: 0.5em;
   align-items: center;
@@ -17,4 +17,11 @@
 button{
   height: 48px;
   text-align: center;
+  background-color: #007acc;
+  color: #ffffff;
+  border-radius: 12px;
+}
+button:hover{
+  
+  background-color: #005fa3;
 }
