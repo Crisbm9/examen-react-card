@@ -23,6 +23,7 @@ const IndexPage = ({data}) => (
             imagen={image} 
             piefoto={node.title} 
             titulo={node.title}
+            link={node.link}
             ></Card>
           
         );
