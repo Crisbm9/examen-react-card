@@ -11,8 +11,9 @@ return(
       <GatsbyImage image={imagen} alt={piefoto} />
     </figure>
     <p>{descripcion}</p>
+    <div className="button">
     <button>+info</button>
-  </div>
+  </div></div>
   </>
 )
 }
