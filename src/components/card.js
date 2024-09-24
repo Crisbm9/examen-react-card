@@ -13,7 +13,7 @@ return(
     </figure>
     <p>{descripcion}</p>
     <div className="button">
-    <button className="boton"><Link className="link" to={link}>+ Info</Link></button>
+    <Link className="link" to={link}>+ Info</Link>
   </div></div>
   </>
 )

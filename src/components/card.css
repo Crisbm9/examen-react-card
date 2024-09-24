@@ -14,14 +14,8 @@
   gap:12px;
   justify-content: center;
 }
-button{
-  height: 48px;
-  text-align: center;
-  background-color: #007acc;
-  color: #ffffff;
-  border-radius: 12px;
-}
-button:hover{
+
+link:hover{
   
   background-color: #005fa3;
 }
@@ -32,4 +26,11 @@ button:hover{
   color: white;
   text-decoration: none;
   font-size: larger;
+  height: 48px;
+  width: 120px;
+  text-align: center;
+  background-color: #007acc;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
 }
